@@ -1,0 +1,21 @@
+2026-02-11 14:56:32 - rss_fetcher - ERROR - Error loading RSS sources: 'bool' object is not callable
+Traceback (most recent call last):
+  File "/Users/karenou/Desktop/AI/rss_article_fetcher/src/rss_manager.py", line 84, in load_sources
+    self.logger.debug(f"  - {source.title}: {source.xml_url}")
+TypeError: 'bool' object is not callable
+2026-02-11 14:56:32 - rss_fetcher - ERROR - Fatal error during execution: 'bool' object is not callable
+Traceback (most recent call last):
+  File "/Users/karenou/Desktop/AI/rss_article_fetcher/main.py", line 100, in run
+    sources = self.rss_manager.load_sources()
+  File "/Users/karenou/Desktop/AI/rss_article_fetcher/src/rss_manager.py", line 84, in load_sources
+    self.logger.debug(f"  - {source.title}: {source.xml_url}")
+TypeError: 'bool' object is not callable
+2026-02-11 14:59:42 - rss_fetcher - ERROR - All retry attempts failed for article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:27:02 - rss_fetcher - ERROR - All retry attempts failed for article: Heritability of human life span is about 50% when heritability is redefined to be something different
+2026-02-11 15:27:07 - rss_fetcher - ERROR - All retry attempts failed for article: Writing an LLM from scratch, part 32b -- Interventions: gradient clipping
+2026-02-11 15:38:01 - rss_fetcher - ERROR - WeChat API error: invalid webhook url, hint: [1770795481606551562250712], from ip: 59.37.125.104, more info at https://open.work.weixin.qq.com/devtool/query?e=93000
+2026-02-11 15:38:02 - rss_fetcher - ERROR - WeChat API error: invalid webhook url, hint: [1770795482596310540205107], from ip: 59.37.125.104, more info at https://open.work.weixin.qq.com/devtool/query?e=93000
+2026-02-11 15:38:04 - rss_fetcher - ERROR - WeChat API error: invalid webhook url, hint: [1770795484612223047767640], from ip: 59.37.125.104, more info at https://open.work.weixin.qq.com/devtool/query?e=93000
+2026-02-11 16:11:08 - rss_fetcher - ERROR - Network error accessing: http://antirez.com/rss
+2026-02-11 16:11:08 - rss_fetcher - ERROR - Error type: ConnectionError
+2026-02-11 16:11:08 - rss_fetcher - ERROR - Error message: HTTPSConnectionPool(host='antirez.com', port=443): Read timed out.

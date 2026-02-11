@@ -1,0 +1,785 @@
+2026-02-11 14:56:32 - rss_fetcher - INFO - Gemini API initialized with model: gemini-pro
+2026-02-11 14:56:32 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 14:56:32 - rss_fetcher - INFO - Loaded 0 processed articles from database
+2026-02-11 14:56:32 - rss_fetcher - INFO - ============================================================
+2026-02-11 14:56:32 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 14:56:32 - rss_fetcher - INFO - ============================================================
+2026-02-11 14:56:32 - rss_fetcher - INFO - Start Time: 2026-02-11 14:56:32
+2026-02-11 14:56:32 - rss_fetcher - INFO - Debug Mode: False
+2026-02-11 14:56:32 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 14:56:32 - rss_fetcher - INFO - Configuration:
+2026-02-11 14:56:32 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 14:56:32 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 14:56:32 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 14:56:32 - rss_fetcher - INFO -   gemini_model: gemini-pro
+2026-02-11 14:56:32 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 14:56:32 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 14:56:32 - rss_fetcher - INFO -   dry_run: False
+2026-02-11 14:56:32 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 14:56:32 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 14:56:32 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 14:56:32 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 14:56:32 - rss_fetcher - ERROR - Error loading RSS sources: 'bool' object is not callable
+Traceback (most recent call last):
+  File "/Users/karenou/Desktop/AI/rss_article_fetcher/src/rss_manager.py", line 84, in load_sources
+    self.logger.debug(f"  - {source.title}: {source.xml_url}")
+TypeError: 'bool' object is not callable
+2026-02-11 14:56:32 - rss_fetcher - ERROR - Fatal error during execution: 'bool' object is not callable
+Traceback (most recent call last):
+  File "/Users/karenou/Desktop/AI/rss_article_fetcher/main.py", line 100, in run
+    sources = self.rss_manager.load_sources()
+  File "/Users/karenou/Desktop/AI/rss_article_fetcher/src/rss_manager.py", line 84, in load_sources
+    self.logger.debug(f"  - {source.title}: {source.xml_url}")
+TypeError: 'bool' object is not callable
+2026-02-11 14:59:16 - rss_fetcher - INFO - Gemini API initialized with model: gemini-pro
+2026-02-11 14:59:16 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 14:59:16 - rss_fetcher - INFO - Loaded 0 processed articles from database
+2026-02-11 14:59:16 - rss_fetcher - INFO - ============================================================
+2026-02-11 14:59:16 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 14:59:16 - rss_fetcher - INFO - ============================================================
+2026-02-11 14:59:16 - rss_fetcher - INFO - Start Time: 2026-02-11 14:59:16
+2026-02-11 14:59:16 - rss_fetcher - INFO - Debug Mode: False
+2026-02-11 14:59:16 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 14:59:16 - rss_fetcher - INFO - Configuration:
+2026-02-11 14:59:16 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 14:59:16 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 14:59:16 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 14:59:16 - rss_fetcher - INFO -   gemini_model: gemini-pro
+2026-02-11 14:59:16 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 14:59:16 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 14:59:16 - rss_fetcher - INFO -   dry_run: True
+2026-02-11 14:59:16 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 14:59:16 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 14:59:16 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 14:59:16 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 14:59:16 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 14:59:16 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 14:59:16 - rss_fetcher - INFO - Time range: 2026-02-10 06:59:16.645419+00:00 to 2026-02-11 06:59:16.645419+00:00
+2026-02-11 14:59:16 - rss_fetcher - INFO - Duration: 1 day, 0:00:00
+2026-02-11 14:59:16 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 14:59:16 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 14:59:16 - rss_fetcher - INFO - Time range: 2026-02-10 06:59:16.645419+00:00 to 2026-02-11 06:59:16.645419+00:00
+2026-02-11 14:59:17 - rss_fetcher - INFO - Fetched 0 articles from idiallo.com
+2026-02-11 14:59:21 - rss_fetcher - INFO - Fetched 1 articles from pluralistic.net
+2026-02-11 14:59:30 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 14:59:31 - rss_fetcher - INFO - Fetched 0 articles from dynomight.net
+2026-02-11 14:59:35 - rss_fetcher - INFO - Fetched 0 articles from gilesthomas.com
+2026-02-11 14:59:36 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 14:59:36 - rss_fetcher - INFO - Total articles fetched: 1
+2026-02-11 14:59:36 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 14:59:36 - rss_fetcher - INFO - Filtered articles: 1 new, 0 already processed
+2026-02-11 14:59:36 - rss_fetcher - INFO - Step 5: Fetching article content...
+2026-02-11 14:59:36 - rss_fetcher - INFO - Fetching content for 1 articles
+2026-02-11 14:59:37 - rss_fetcher - INFO - Article [success]: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 14:59:37 - rss_fetcher - INFO - Successfully fetched content for 1/1 articles
+2026-02-11 14:59:37 - rss_fetcher - INFO - Step 6: Generating English summaries...
+2026-02-11 14:59:37 - rss_fetcher - INFO - Generating summaries for 1 articles
+2026-02-11 14:59:38 - rss_fetcher - WARNING - Summary generation attempt 1 failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-02-11 14:59:40 - rss_fetcher - WARNING - Summary generation attempt 2 failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-02-11 14:59:42 - rss_fetcher - WARNING - Summary generation attempt 3 failed: 404 models/gemini-pro is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.
+2026-02-11 14:59:42 - rss_fetcher - ERROR - All retry attempts failed for article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 14:59:42 - rss_fetcher - INFO - Successfully generated 1/1 summaries
+2026-02-11 14:59:42 - rss_fetcher - INFO - Step 7: Saving articles to database...
+2026-02-11 14:59:42 - rss_fetcher - INFO - Saved 1/1 articles to database
+2026-02-11 14:59:42 - rss_fetcher - INFO - Step 8: Skipping WeChat push (dry run mode)
+2026-02-11 14:59:42 - rss_fetcher - INFO - ============================================================
+2026-02-11 14:59:42 - rss_fetcher - INFO - Execution Summary
+2026-02-11 14:59:42 - rss_fetcher - INFO - ============================================================
+2026-02-11 14:59:42 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 14:59:42 - rss_fetcher - INFO - articles_fetched: 1
+2026-02-11 14:59:42 - rss_fetcher - INFO - new_articles: 1
+2026-02-11 14:59:42 - rss_fetcher - INFO - articles_pushed: 0
+2026-02-11 14:59:42 - rss_fetcher - INFO - push_failed: 0
+2026-02-11 14:59:42 - rss_fetcher - INFO - duration: 0:00:25
+2026-02-11 14:59:42 - rss_fetcher - INFO - start_time: 2026-02-10 06:59:16
+2026-02-11 14:59:42 - rss_fetcher - INFO - end_time: 2026-02-11 06:59:16
+2026-02-11 14:59:42 - rss_fetcher - INFO - End Time: 2026-02-11 14:59:42
+2026-02-11 14:59:42 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:00:23 - rss_fetcher - INFO - Gemini API initialized with model: gemini-pro
+2026-02-11 15:00:23 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 15:00:23 - rss_fetcher - INFO - Loaded 1 processed articles from database
+2026-02-11 15:00:23 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:00:23 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 15:00:23 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:00:23 - rss_fetcher - INFO - Start Time: 2026-02-11 15:00:23
+2026-02-11 15:00:23 - rss_fetcher - INFO - Debug Mode: True
+2026-02-11 15:00:23 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:00:23 - rss_fetcher - INFO - Configuration:
+2026-02-11 15:00:23 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:00:23 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 15:00:23 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:00:23 - rss_fetcher - INFO -   gemini_model: gemini-pro
+2026-02-11 15:00:23 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 15:00:23 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 15:00:23 - rss_fetcher - INFO -   dry_run: True
+2026-02-11 15:00:23 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 15:00:23 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 15:00:23 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:00:23 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 15:00:23 - rss_fetcher - DEBUG -   - idiallo.com: https://idiallo.com/feed.rss
+2026-02-11 15:00:23 - rss_fetcher - DEBUG -   - pluralistic.net: https://pluralistic.net/feed/
+2026-02-11 15:00:23 - rss_fetcher - DEBUG -   - antirez.com: http://antirez.com/rss
+2026-02-11 15:00:23 - rss_fetcher - DEBUG -   - dynomight.net: https://dynomight.net/feed.xml
+2026-02-11 15:00:23 - rss_fetcher - DEBUG -   - gilesthomas.com: https://gilesthomas.com/feed/rss.xml
+2026-02-11 15:00:23 - rss_fetcher - DEBUG -   - terriblesoftware.org: https://terriblesoftware.org/feed/
+2026-02-11 15:00:23 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 15:00:23 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 15:00:23 - rss_fetcher - DEBUG - Using default end time (now): 2026-02-11 07:00:23.154896+00:00
+2026-02-11 15:00:23 - rss_fetcher - DEBUG - Using default start time (24h ago): 2026-02-10 07:00:23.154896+00:00
+2026-02-11 15:00:23 - rss_fetcher - INFO - Time range: 2026-02-10 07:00:23.154896+00:00 to 2026-02-11 07:00:23.154896+00:00
+2026-02-11 15:00:23 - rss_fetcher - INFO - Duration: 1 day, 0:00:00
+2026-02-11 15:00:23 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 15:00:23 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 15:00:23 - rss_fetcher - INFO - Time range: 2026-02-10 07:00:23.154896+00:00 to 2026-02-11 07:00:23.154896+00:00
+2026-02-11 15:00:24 - rss_fetcher - INFO - Fetched 0 articles from idiallo.com
+2026-02-11 15:00:26 - rss_fetcher - DEBUG - Added article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:00:26 - rss_fetcher - INFO - Fetched 1 articles from pluralistic.net
+2026-02-11 15:00:29 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 15:00:30 - rss_fetcher - INFO - Fetched 0 articles from dynomight.net
+2026-02-11 15:00:36 - rss_fetcher - INFO - Fetched 0 articles from gilesthomas.com
+2026-02-11 15:00:36 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 15:00:37 - rss_fetcher - INFO - Total articles fetched: 1
+2026-02-11 15:00:37 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 15:00:37 - rss_fetcher - DEBUG - Skipping already processed article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:00:37 - rss_fetcher - INFO - Filtered articles: 0 new, 1 already processed
+2026-02-11 15:00:37 - rss_fetcher - INFO - No new articles to process
+2026-02-11 15:00:37 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:00:37 - rss_fetcher - INFO - Execution Summary
+2026-02-11 15:00:37 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:00:37 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 15:00:37 - rss_fetcher - INFO - articles_fetched: 1
+2026-02-11 15:00:37 - rss_fetcher - INFO - new_articles: 0
+2026-02-11 15:00:37 - rss_fetcher - INFO - articles_pushed: 0
+2026-02-11 15:00:37 - rss_fetcher - INFO - duration: 0:00:14
+2026-02-11 15:00:37 - rss_fetcher - INFO - End Time: 2026-02-11 15:00:37
+2026-02-11 15:00:37 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:07:46 - rss_fetcher - INFO - Gemini API initialized with model: gemini-pro
+2026-02-11 15:07:46 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 15:07:46 - rss_fetcher - INFO - Loaded 1 processed articles from database
+2026-02-11 15:07:46 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:07:46 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 15:07:46 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:07:46 - rss_fetcher - INFO - Start Time: 2026-02-11 15:07:46
+2026-02-11 15:07:46 - rss_fetcher - INFO - Debug Mode: True
+2026-02-11 15:07:46 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:07:46 - rss_fetcher - INFO - Configuration:
+2026-02-11 15:07:46 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:07:46 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 15:07:46 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:07:46 - rss_fetcher - INFO -   gemini_model: gemini-pro
+2026-02-11 15:07:46 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 15:07:46 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 15:07:46 - rss_fetcher - INFO -   dry_run: True
+2026-02-11 15:07:46 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 15:07:46 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 15:07:46 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:07:46 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 15:07:46 - rss_fetcher - DEBUG -   - idiallo.com: https://idiallo.com/feed.rss
+2026-02-11 15:07:46 - rss_fetcher - DEBUG -   - pluralistic.net: https://pluralistic.net/feed/
+2026-02-11 15:07:46 - rss_fetcher - DEBUG -   - antirez.com: http://antirez.com/rss
+2026-02-11 15:07:46 - rss_fetcher - DEBUG -   - dynomight.net: https://dynomight.net/feed.xml
+2026-02-11 15:07:46 - rss_fetcher - DEBUG -   - gilesthomas.com: https://gilesthomas.com/feed/rss.xml
+2026-02-11 15:07:46 - rss_fetcher - DEBUG -   - terriblesoftware.org: https://terriblesoftware.org/feed/
+2026-02-11 15:07:46 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 15:07:46 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 15:07:46 - rss_fetcher - DEBUG - Using default end time (now): 2026-02-11 07:07:46.009991+00:00
+2026-02-11 15:07:46 - rss_fetcher - DEBUG - Using default start time (24h ago): 2026-02-10 07:07:46.009991+00:00
+2026-02-11 15:07:46 - rss_fetcher - INFO - Time range: 2026-02-10 07:07:46.009991+00:00 to 2026-02-11 07:07:46.009991+00:00
+2026-02-11 15:07:46 - rss_fetcher - INFO - Duration: 1 day, 0:00:00
+2026-02-11 15:07:46 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 15:07:46 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 15:07:46 - rss_fetcher - INFO - Time range: 2026-02-10 07:07:46.009991+00:00 to 2026-02-11 07:07:46.009991+00:00
+2026-02-11 15:07:47 - rss_fetcher - INFO - Fetched 0 articles from idiallo.com
+2026-02-11 15:07:49 - rss_fetcher - DEBUG - Added article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:07:49 - rss_fetcher - INFO - Fetched 1 articles from pluralistic.net
+2026-02-11 15:09:56 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 15:09:57 - rss_fetcher - INFO - Fetched 0 articles from dynomight.net
+2026-02-11 15:10:11 - rss_fetcher - INFO - Fetched 0 articles from gilesthomas.com
+2026-02-11 15:10:12 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 15:10:13 - rss_fetcher - INFO - Total articles fetched: 1
+2026-02-11 15:10:13 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 15:10:13 - rss_fetcher - DEBUG - Skipping already processed article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:10:13 - rss_fetcher - INFO - Filtered articles: 0 new, 1 already processed
+2026-02-11 15:10:13 - rss_fetcher - INFO - No new articles to process
+2026-02-11 15:10:13 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:10:13 - rss_fetcher - INFO - Execution Summary
+2026-02-11 15:10:13 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:10:13 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 15:10:13 - rss_fetcher - INFO - articles_fetched: 1
+2026-02-11 15:10:13 - rss_fetcher - INFO - new_articles: 0
+2026-02-11 15:10:13 - rss_fetcher - INFO - articles_pushed: 0
+2026-02-11 15:10:13 - rss_fetcher - INFO - duration: 0:02:27
+2026-02-11 15:10:13 - rss_fetcher - INFO - End Time: 2026-02-11 15:10:13
+2026-02-11 15:10:13 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:20:05 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 15:20:05 - rss_fetcher - INFO - Loaded 1 processed articles from database
+2026-02-11 15:23:34 - rss_fetcher - INFO - Gemini API initialized with model: gemini-2.5-flash
+2026-02-11 15:23:34 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 15:23:34 - rss_fetcher - INFO - Loaded 1 processed articles from database
+2026-02-11 15:23:34 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:23:34 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 15:23:34 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:23:34 - rss_fetcher - INFO - Start Time: 2026-02-11 15:23:34
+2026-02-11 15:23:34 - rss_fetcher - INFO - Debug Mode: True
+2026-02-11 15:23:34 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:23:34 - rss_fetcher - INFO - Configuration:
+2026-02-11 15:23:34 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:23:34 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 15:23:34 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:23:34 - rss_fetcher - INFO -   gemini_model: gemini-2.5-flash
+2026-02-11 15:23:34 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 15:23:34 - rss_fetcher - INFO -   force_mode: True
+2026-02-11 15:23:34 - rss_fetcher - INFO -   dry_run: True
+2026-02-11 15:23:34 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 15:23:34 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 15:23:34 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:23:34 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 15:23:34 - rss_fetcher - DEBUG -   - idiallo.com: https://idiallo.com/feed.rss
+2026-02-11 15:23:34 - rss_fetcher - DEBUG -   - pluralistic.net: https://pluralistic.net/feed/
+2026-02-11 15:23:34 - rss_fetcher - DEBUG -   - antirez.com: http://antirez.com/rss
+2026-02-11 15:23:34 - rss_fetcher - DEBUG -   - dynomight.net: https://dynomight.net/feed.xml
+2026-02-11 15:23:34 - rss_fetcher - DEBUG -   - gilesthomas.com: https://gilesthomas.com/feed/rss.xml
+2026-02-11 15:23:34 - rss_fetcher - DEBUG -   - terriblesoftware.org: https://terriblesoftware.org/feed/
+2026-02-11 15:23:34 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 15:23:34 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 15:23:34 - rss_fetcher - DEBUG - Using default end time (now): 2026-02-11 07:23:34.667676+00:00
+2026-02-11 15:23:34 - rss_fetcher - DEBUG - Parsed start time: 2026-02-04 07:23:34.667710+00:00
+2026-02-11 15:23:34 - rss_fetcher - INFO - Time range: 2026-02-04 07:23:34.667710+00:00 to 2026-02-11 07:23:34.667676+00:00
+2026-02-11 15:23:34 - rss_fetcher - INFO - Duration: 6 days, 23:59:59.999966
+2026-02-11 15:23:34 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 15:23:34 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 15:23:34 - rss_fetcher - INFO - Time range: 2026-02-04 07:23:34.667710+00:00 to 2026-02-11 07:23:34.667676+00:00
+2026-02-11 15:23:35 - rss_fetcher - DEBUG - Added article: Microsoft Should Watch The Expanse
+2026-02-11 15:23:35 - rss_fetcher - DEBUG - Added article: Open Molten Claw
+2026-02-11 15:23:35 - rss_fetcher - DEBUG - Added article: We installed a single turnstile to feel secure
+2026-02-11 15:23:35 - rss_fetcher - INFO - Fetched 3 articles from idiallo.com
+2026-02-11 15:23:52 - rss_fetcher - DEBUG - Added article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:23:52 - rss_fetcher - DEBUG - Added article: Pluralistic: The Epstein class and collapse porn (09 Feb 2026)
+2026-02-11 15:23:52 - rss_fetcher - DEBUG - Added article: Pluralistic: End of the line for video essays (07 Feb 2026)
+2026-02-11 15:23:52 - rss_fetcher - DEBUG - Added article: Pluralistic: Luxury Kafka (06 Feb 2026)
+2026-02-11 15:23:52 - rss_fetcher - DEBUG - Added article: Pluralistic: All laws are local (05 Feb 2026)
+2026-02-11 15:23:52 - rss_fetcher - DEBUG - Added article: Pluralistic: Justin Key's "The Hospital at the End Of the World" (04 Feb 2026)
+2026-02-11 15:23:52 - rss_fetcher - INFO - Fetched 6 articles from pluralistic.net
+2026-02-11 15:25:37 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 15:25:37 - rss_fetcher - DEBUG - Added article: Heritability of human life span is about 50% when heritability is redefined to be something different
+2026-02-11 15:25:37 - rss_fetcher - INFO - Fetched 1 articles from dynomight.net
+2026-02-11 15:25:59 - rss_fetcher - DEBUG - Added article: Writing an LLM from scratch, part 32b -- Interventions: gradient clipping
+2026-02-11 15:25:59 - rss_fetcher - DEBUG - Added article: Writing an LLM from scratch, part 32c -- Interventions: removing dropout
+2026-02-11 15:25:59 - rss_fetcher - DEBUG - Added article: Writing an LLM from scratch, part 32d -- Interventions: adding attention bias
+2026-02-11 15:25:59 - rss_fetcher - INFO - Fetched 3 articles from gilesthomas.com
+2026-02-11 15:26:01 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 15:26:01 - rss_fetcher - INFO - Total articles fetched: 13
+2026-02-11 15:26:01 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 15:26:01 - rss_fetcher - INFO - Force mode enabled, skipping deduplication
+2026-02-11 15:26:01 - rss_fetcher - INFO - Step 5: Fetching article content...
+2026-02-11 15:26:01 - rss_fetcher - INFO - Fetching content for 13 articles
+2026-02-11 15:26:02 - rss_fetcher - INFO - Article [success]: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:26:02 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/10/miller-in-the-dock/
+2026-02-11 15:26:02 - rss_fetcher - INFO - Article [success]: Microsoft Should Watch The Expanse
+2026-02-11 15:26:02 - rss_fetcher - DEBUG -   URL: https://idiallo.com/blog/microsoft-should-watch-the-expanse?src=feed
+2026-02-11 15:26:02 - rss_fetcher - INFO - Article [success]: Open Molten Claw
+2026-02-11 15:26:02 - rss_fetcher - DEBUG -   URL: https://idiallo.com/blog/open-molten-claw?src=feed
+2026-02-11 15:26:02 - rss_fetcher - INFO - Article [success]: We installed a single turnstile to feel secure
+2026-02-11 15:26:02 - rss_fetcher - DEBUG -   URL: https://idiallo.com/blog/installed-single-turnstile-for-security-theater?src=feed
+2026-02-11 15:26:03 - rss_fetcher - INFO - Article [success]: Pluralistic: The Epstein class and collapse porn (09 Feb 2026)
+2026-02-11 15:26:03 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/09/sloppy-steve/
+2026-02-11 15:26:04 - rss_fetcher - INFO - Article [success]: Pluralistic: All laws are local (05 Feb 2026)
+2026-02-11 15:26:04 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/05/contingency/
+2026-02-11 15:26:04 - rss_fetcher - INFO - Article [success]: Heritability of human life span is about 50% when heritability is redefined to be something different
+2026-02-11 15:26:04 - rss_fetcher - DEBUG -   URL: https://dynomight.net/lifespan/
+2026-02-11 15:26:05 - rss_fetcher - INFO - Article [success]: Writing an LLM from scratch, part 32b -- Interventions: gradient clipping
+2026-02-11 15:26:05 - rss_fetcher - DEBUG -   URL: https://www.gilesthomas.com/2026/02/llm-from-scratch-32b-interventions-gradient-clipping
+2026-02-11 15:26:05 - rss_fetcher - INFO - Article [success]: Pluralistic: Justin Key's "The Hospital at the End Of the World" (04 Feb 2026)
+2026-02-11 15:26:05 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/04/slice-bees/
+2026-02-11 15:26:06 - rss_fetcher - INFO - Article [success]: Writing an LLM from scratch, part 32c -- Interventions: removing dropout
+2026-02-11 15:26:06 - rss_fetcher - DEBUG -   URL: https://www.gilesthomas.com/2026/02/llm-from-scratch-32c-interventions-removing-dropout
+2026-02-11 15:26:06 - rss_fetcher - INFO - Article [success]: Pluralistic: Luxury Kafka (06 Feb 2026)
+2026-02-11 15:26:06 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/06/doge-ball/
+2026-02-11 15:26:07 - rss_fetcher - INFO - Article [success]: Writing an LLM from scratch, part 32d -- Interventions: adding attention bias
+2026-02-11 15:26:07 - rss_fetcher - DEBUG -   URL: https://www.gilesthomas.com/2026/02/llm-from-scratch-32d-interventions-adding-attention-bias
+2026-02-11 15:26:08 - rss_fetcher - INFO - Article [success]: Pluralistic: End of the line for video essays (07 Feb 2026)
+2026-02-11 15:26:08 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/07/aimsters-revenge/
+2026-02-11 15:26:08 - rss_fetcher - INFO - Successfully fetched content for 13/13 articles
+2026-02-11 15:26:08 - rss_fetcher - INFO - Step 6: Generating English summaries...
+2026-02-11 15:26:08 - rss_fetcher - INFO - Generating summaries for 13 articles
+2026-02-11 15:26:08 - rss_fetcher - DEBUG - Processing article 1/13: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:26:08 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:18 - rss_fetcher - DEBUG - Processing article 2/13: Microsoft Should Watch The Expanse
+2026-02-11 15:26:18 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:25 - rss_fetcher - DEBUG - Processing article 3/13: Open Molten Claw
+2026-02-11 15:26:25 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:34 - rss_fetcher - DEBUG - Processing article 4/13: We installed a single turnstile to feel secure
+2026-02-11 15:26:34 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:41 - rss_fetcher - DEBUG - Processing article 5/13: Pluralistic: The Epstein class and collapse porn (09 Feb 2026)
+2026-02-11 15:26:41 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:48 - rss_fetcher - DEBUG - Processing article 6/13: Pluralistic: All laws are local (05 Feb 2026)
+2026-02-11 15:26:48 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:58 - rss_fetcher - DEBUG - Processing article 7/13: Heritability of human life span is about 50% when heritability is redefined to be something different
+2026-02-11 15:26:58 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:26:59 - rss_fetcher - WARNING - Summary generation attempt 1 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 1.1280472s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 1
+}
+]
+2026-02-11 15:27:00 - rss_fetcher - WARNING - Summary generation attempt 2 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 59.847869517s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-02-11 15:27:02 - rss_fetcher - WARNING - Summary generation attempt 3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 57.57864129s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2026-02-11 15:27:02 - rss_fetcher - ERROR - All retry attempts failed for article: Heritability of human life span is about 50% when heritability is redefined to be something different
+2026-02-11 15:27:03 - rss_fetcher - DEBUG - Processing article 8/13: Writing an LLM from scratch, part 32b -- Interventions: gradient clipping
+2026-02-11 15:27:03 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:27:03 - rss_fetcher - WARNING - Summary generation attempt 1 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 56.29561744s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 56
+}
+]
+2026-02-11 15:27:05 - rss_fetcher - WARNING - Summary generation attempt 2 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 54.997195793s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 54
+}
+]
+2026-02-11 15:27:07 - rss_fetcher - WARNING - Summary generation attempt 3 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 52.722033383s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 52
+}
+]
+2026-02-11 15:27:07 - rss_fetcher - ERROR - All retry attempts failed for article: Writing an LLM from scratch, part 32b -- Interventions: gradient clipping
+2026-02-11 15:27:08 - rss_fetcher - DEBUG - Processing article 9/13: Pluralistic: Justin Key's "The Hospital at the End Of the World" (04 Feb 2026)
+2026-02-11 15:27:08 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:27:08 - rss_fetcher - WARNING - Summary generation attempt 1 failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 51.433563315s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 51
+}
+]
+2026-02-11 15:27:17 - rss_fetcher - DEBUG - Processing article 10/13: Writing an LLM from scratch, part 32c -- Interventions: removing dropout
+2026-02-11 15:27:17 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:27:24 - rss_fetcher - DEBUG - Processing article 11/13: Pluralistic: Luxury Kafka (06 Feb 2026)
+2026-02-11 15:27:24 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:27:33 - rss_fetcher - DEBUG - Processing article 12/13: Writing an LLM from scratch, part 32d -- Interventions: adding attention bias
+2026-02-11 15:27:33 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:27:39 - rss_fetcher - DEBUG - Processing article 13/13: Pluralistic: End of the line for video essays (07 Feb 2026)
+2026-02-11 15:27:39 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:27:45 - rss_fetcher - INFO - Successfully generated 13/13 summaries
+2026-02-11 15:27:45 - rss_fetcher - INFO - Step 7: Saving articles to database...
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/10/miller-in-the-dock/
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://idiallo.com/blog/microsoft-should-watch-the-expanse?src=feed
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://idiallo.com/blog/open-molten-claw?src=feed
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://idiallo.com/blog/installed-single-turnstile-for-security-theater?src=feed
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/09/sloppy-steve/
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/05/contingency/
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://dynomight.net/lifespan/
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://www.gilesthomas.com/2026/02/llm-from-scratch-32b-interventions-gradient-clipping
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/04/slice-bees/
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://www.gilesthomas.com/2026/02/llm-from-scratch-32c-interventions-removing-dropout
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/06/doge-ball/
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://www.gilesthomas.com/2026/02/llm-from-scratch-32d-interventions-adding-attention-bias
+2026-02-11 15:27:45 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/07/aimsters-revenge/
+2026-02-11 15:27:45 - rss_fetcher - INFO - Saved 13/13 articles to database
+2026-02-11 15:27:45 - rss_fetcher - INFO - Step 8: Skipping WeChat push (dry run mode)
+2026-02-11 15:27:45 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:27:45 - rss_fetcher - INFO - Execution Summary
+2026-02-11 15:27:45 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:27:45 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 15:27:45 - rss_fetcher - INFO - articles_fetched: 13
+2026-02-11 15:27:45 - rss_fetcher - INFO - new_articles: 13
+2026-02-11 15:27:45 - rss_fetcher - INFO - articles_pushed: 0
+2026-02-11 15:27:45 - rss_fetcher - INFO - push_failed: 0
+2026-02-11 15:27:45 - rss_fetcher - INFO - duration: 0:04:11
+2026-02-11 15:27:45 - rss_fetcher - INFO - start_time: 2026-02-04 07:23:34
+2026-02-11 15:27:45 - rss_fetcher - INFO - end_time: 2026-02-11 07:23:34
+2026-02-11 15:27:45 - rss_fetcher - INFO - End Time: 2026-02-11 15:27:45
+2026-02-11 15:27:45 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:35:16 - rss_fetcher - INFO - Database initialized at data/processed_articles.db
+2026-02-11 15:35:16 - rss_fetcher - INFO - Loaded 13 processed articles from database
+2026-02-11 15:35:51 - rss_fetcher - INFO - Gemini API initialized with model: gemini-2.5-flash
+2026-02-11 15:35:51 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 15:35:51 - rss_fetcher - INFO - Loaded 13 processed articles from database
+2026-02-11 15:35:51 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:35:51 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 15:35:51 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:35:51 - rss_fetcher - INFO - Start Time: 2026-02-11 15:35:51
+2026-02-11 15:35:51 - rss_fetcher - INFO - Debug Mode: True
+2026-02-11 15:35:51 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:35:51 - rss_fetcher - INFO - Configuration:
+2026-02-11 15:35:51 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:35:51 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 15:35:51 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:35:51 - rss_fetcher - INFO -   gemini_model: gemini-2.5-flash
+2026-02-11 15:35:51 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 15:35:51 - rss_fetcher - INFO -   force_mode: True
+2026-02-11 15:35:51 - rss_fetcher - INFO -   dry_run: False
+2026-02-11 15:35:51 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 15:35:51 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 15:35:51 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:35:51 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 15:35:51 - rss_fetcher - DEBUG -   - idiallo.com: https://idiallo.com/feed.rss
+2026-02-11 15:35:51 - rss_fetcher - DEBUG -   - pluralistic.net: https://pluralistic.net/feed/
+2026-02-11 15:35:51 - rss_fetcher - DEBUG -   - antirez.com: http://antirez.com/rss
+2026-02-11 15:35:51 - rss_fetcher - DEBUG -   - dynomight.net: https://dynomight.net/feed.xml
+2026-02-11 15:35:51 - rss_fetcher - DEBUG -   - gilesthomas.com: https://gilesthomas.com/feed/rss.xml
+2026-02-11 15:35:51 - rss_fetcher - DEBUG -   - terriblesoftware.org: https://terriblesoftware.org/feed/
+2026-02-11 15:35:51 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 15:35:51 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 15:35:51 - rss_fetcher - DEBUG - Using default end time (now): 2026-02-11 07:35:51.226130+00:00
+2026-02-11 15:35:51 - rss_fetcher - DEBUG - Parsed start time: 2026-02-10 07:35:51.226157+00:00
+2026-02-11 15:35:51 - rss_fetcher - INFO - Time range: 2026-02-10 07:35:51.226157+00:00 to 2026-02-11 07:35:51.226130+00:00
+2026-02-11 15:35:51 - rss_fetcher - INFO - Duration: 23:59:59.999973
+2026-02-11 15:35:51 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 15:35:51 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 15:35:51 - rss_fetcher - INFO - Time range: 2026-02-10 07:35:51.226157+00:00 to 2026-02-11 07:35:51.226130+00:00
+2026-02-11 15:35:52 - rss_fetcher - INFO - Fetched 0 articles from idiallo.com
+2026-02-11 15:36:45 - rss_fetcher - DEBUG - Added article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:36:45 - rss_fetcher - INFO - Fetched 1 articles from pluralistic.net
+2026-02-11 15:37:46 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 15:37:46 - rss_fetcher - INFO - Fetched 0 articles from dynomight.net
+2026-02-11 15:37:50 - rss_fetcher - INFO - Fetched 0 articles from gilesthomas.com
+2026-02-11 15:37:52 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 15:37:53 - rss_fetcher - INFO - Total articles fetched: 1
+2026-02-11 15:37:53 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 15:37:53 - rss_fetcher - INFO - Force mode enabled, skipping deduplication
+2026-02-11 15:37:53 - rss_fetcher - INFO - Step 5: Fetching article content...
+2026-02-11 15:37:53 - rss_fetcher - INFO - Fetching content for 1 articles
+2026-02-11 15:37:54 - rss_fetcher - INFO - Article [success]: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:37:54 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/10/miller-in-the-dock/
+2026-02-11 15:37:54 - rss_fetcher - INFO - Successfully fetched content for 1/1 articles
+2026-02-11 15:37:54 - rss_fetcher - INFO - Step 6: Generating English summaries...
+2026-02-11 15:37:54 - rss_fetcher - INFO - Generating summaries for 1 articles
+2026-02-11 15:37:54 - rss_fetcher - DEBUG - Processing article 1/1: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:37:54 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:38:01 - rss_fetcher - INFO - Successfully generated 1/1 summaries
+2026-02-11 15:38:01 - rss_fetcher - INFO - Step 7: Saving articles to database...
+2026-02-11 15:38:01 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/10/miller-in-the-dock/
+2026-02-11 15:38:01 - rss_fetcher - INFO - Saved 1/1 articles to database
+2026-02-11 15:38:01 - rss_fetcher - INFO - Step 8: Pushing to WeChat...
+2026-02-11 15:38:01 - rss_fetcher - INFO - Pushing 1 articles to WeChat
+2026-02-11 15:38:01 - rss_fetcher - INFO - Sending batch 1/1 (1 articles)
+2026-02-11 15:38:01 - rss_fetcher - ERROR - WeChat API error: invalid webhook url, hint: [1770795481606551562250712], from ip: 59.37.125.104, more info at https://open.work.weixin.qq.com/devtool/query?e=93000
+2026-02-11 15:38:02 - rss_fetcher - DEBUG - Retry attempt 2 for batch 1
+2026-02-11 15:38:02 - rss_fetcher - ERROR - WeChat API error: invalid webhook url, hint: [1770795482596310540205107], from ip: 59.37.125.104, more info at https://open.work.weixin.qq.com/devtool/query?e=93000
+2026-02-11 15:38:04 - rss_fetcher - DEBUG - Retry attempt 3 for batch 1
+2026-02-11 15:38:04 - rss_fetcher - ERROR - WeChat API error: invalid webhook url, hint: [1770795484612223047767640], from ip: 59.37.125.104, more info at https://open.work.weixin.qq.com/devtool/query?e=93000
+2026-02-11 15:38:04 - rss_fetcher - INFO - Push complete: 0 success, 1 failed
+2026-02-11 15:38:04 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:38:04 - rss_fetcher - INFO - Execution Summary
+2026-02-11 15:38:04 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:38:04 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 15:38:04 - rss_fetcher - INFO - articles_fetched: 1
+2026-02-11 15:38:04 - rss_fetcher - INFO - new_articles: 1
+2026-02-11 15:38:04 - rss_fetcher - INFO - articles_pushed: 0
+2026-02-11 15:38:04 - rss_fetcher - INFO - push_failed: 1
+2026-02-11 15:38:04 - rss_fetcher - INFO - duration: 0:02:13
+2026-02-11 15:38:04 - rss_fetcher - INFO - start_time: 2026-02-10 07:35:51
+2026-02-11 15:38:04 - rss_fetcher - INFO - end_time: 2026-02-11 07:35:51
+2026-02-11 15:38:04 - rss_fetcher - INFO - End Time: 2026-02-11 15:38:04
+2026-02-11 15:38:04 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:40:34 - rss_fetcher - INFO - Gemini API initialized with model: gemini-2.5-flash
+2026-02-11 15:40:34 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 15:40:34 - rss_fetcher - INFO - Loaded 0 processed articles from database
+2026-02-11 15:40:34 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:40:34 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 15:40:34 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:40:34 - rss_fetcher - INFO - Start Time: 2026-02-11 15:40:34
+2026-02-11 15:40:34 - rss_fetcher - INFO - Debug Mode: True
+2026-02-11 15:40:34 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:40:34 - rss_fetcher - INFO - Configuration:
+2026-02-11 15:40:34 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:40:34 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 15:40:34 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 15:40:34 - rss_fetcher - INFO -   gemini_model: gemini-2.5-flash
+2026-02-11 15:40:34 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 15:40:34 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 15:40:34 - rss_fetcher - INFO -   dry_run: True
+2026-02-11 15:40:34 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 15:40:34 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 15:40:34 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 15:40:34 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 15:40:34 - rss_fetcher - DEBUG -   - idiallo.com: https://idiallo.com/feed.rss
+2026-02-11 15:40:34 - rss_fetcher - DEBUG -   - pluralistic.net: https://pluralistic.net/feed/
+2026-02-11 15:40:34 - rss_fetcher - DEBUG -   - antirez.com: http://antirez.com/rss
+2026-02-11 15:40:34 - rss_fetcher - DEBUG -   - dynomight.net: https://dynomight.net/feed.xml
+2026-02-11 15:40:34 - rss_fetcher - DEBUG -   - gilesthomas.com: https://gilesthomas.com/feed/rss.xml
+2026-02-11 15:40:34 - rss_fetcher - DEBUG -   - terriblesoftware.org: https://terriblesoftware.org/feed/
+2026-02-11 15:40:34 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 15:40:34 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 15:40:34 - rss_fetcher - DEBUG - Using default end time (now): 2026-02-11 07:40:34.856059+00:00
+2026-02-11 15:40:34 - rss_fetcher - DEBUG - Using default start time (24h ago): 2026-02-10 07:40:34.856059+00:00
+2026-02-11 15:40:34 - rss_fetcher - INFO - Time range: 2026-02-10 07:40:34.856059+00:00 to 2026-02-11 07:40:34.856059+00:00
+2026-02-11 15:40:34 - rss_fetcher - INFO - Duration: 1 day, 0:00:00
+2026-02-11 15:40:34 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 15:40:34 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 15:40:34 - rss_fetcher - INFO - Time range: 2026-02-10 07:40:34.856059+00:00 to 2026-02-11 07:40:34.856059+00:00
+2026-02-11 15:40:35 - rss_fetcher - INFO - Fetched 0 articles from idiallo.com
+2026-02-11 15:40:39 - rss_fetcher - DEBUG - Added article: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:40:39 - rss_fetcher - INFO - Fetched 1 articles from pluralistic.net
+2026-02-11 15:41:19 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 15:41:21 - rss_fetcher - INFO - Fetched 0 articles from dynomight.net
+2026-02-11 15:41:29 - rss_fetcher - INFO - Fetched 0 articles from gilesthomas.com
+2026-02-11 15:41:30 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 15:41:30 - rss_fetcher - INFO - Total articles fetched: 1
+2026-02-11 15:41:30 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 15:41:30 - rss_fetcher - INFO - Filtered articles: 1 new, 0 already processed
+2026-02-11 15:41:30 - rss_fetcher - INFO - Step 5: Fetching article content...
+2026-02-11 15:41:30 - rss_fetcher - INFO - Fetching content for 1 articles
+2026-02-11 15:41:33 - rss_fetcher - INFO - Article [success]: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:41:33 - rss_fetcher - DEBUG -   URL: https://pluralistic.net/2026/02/10/miller-in-the-dock/
+2026-02-11 15:41:33 - rss_fetcher - INFO - Successfully fetched content for 1/1 articles
+2026-02-11 15:41:33 - rss_fetcher - INFO - Step 6: Generating English summaries...
+2026-02-11 15:41:33 - rss_fetcher - INFO - Generating summaries for 1 articles
+2026-02-11 15:41:33 - rss_fetcher - DEBUG - Processing article 1/1: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 15:41:33 - rss_fetcher - DEBUG - Detected language: en
+2026-02-11 15:41:39 - rss_fetcher - INFO - Successfully generated 1/1 summaries
+2026-02-11 15:41:39 - rss_fetcher - INFO - Step 7: Saving articles to database...
+2026-02-11 15:41:39 - rss_fetcher - DEBUG - Marked as processed: https://pluralistic.net/2026/02/10/miller-in-the-dock/
+2026-02-11 15:41:39 - rss_fetcher - INFO - Saved 1/1 articles to database
+2026-02-11 15:41:39 - rss_fetcher - INFO - Step 8: Skipping WeChat push (dry run mode)
+2026-02-11 15:41:39 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:41:39 - rss_fetcher - INFO - Execution Summary
+2026-02-11 15:41:39 - rss_fetcher - INFO - ============================================================
+2026-02-11 15:41:39 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 15:41:39 - rss_fetcher - INFO - articles_fetched: 1
+2026-02-11 15:41:39 - rss_fetcher - INFO - new_articles: 1
+2026-02-11 15:41:39 - rss_fetcher - INFO - articles_pushed: 0
+2026-02-11 15:41:39 - rss_fetcher - INFO - push_failed: 0
+2026-02-11 15:41:39 - rss_fetcher - INFO - duration: 0:01:04
+2026-02-11 15:41:39 - rss_fetcher - INFO - start_time: 2026-02-10 07:40:34
+2026-02-11 15:41:39 - rss_fetcher - INFO - end_time: 2026-02-11 07:40:34
+2026-02-11 15:41:39 - rss_fetcher - INFO - End Time: 2026-02-11 15:41:39
+2026-02-11 15:41:39 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:06:48 - rss_fetcher - INFO - API quota loaded: 0/20 requests used today
+2026-02-11 16:06:48 - rss_fetcher - INFO - Gemini API initialized with model: gemini-2.5-flash
+2026-02-11 16:06:48 - rss_fetcher - INFO - Rate limits: 4 RPM, 20 requests/day
+2026-02-11 16:06:48 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 16:06:48 - rss_fetcher - INFO - Loaded 0 processed articles from database
+2026-02-11 16:06:48 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:06:48 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 16:06:48 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:06:48 - rss_fetcher - INFO - Start Time: 2026-02-11 16:06:48
+2026-02-11 16:06:48 - rss_fetcher - INFO - Debug Mode: False
+2026-02-11 16:06:48 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 16:06:48 - rss_fetcher - INFO - Configuration:
+2026-02-11 16:06:48 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 16:06:48 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 16:06:48 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 16:06:48 - rss_fetcher - INFO -   gemini_model: gemini-2.5-flash
+2026-02-11 16:06:48 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 16:06:48 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 16:06:48 - rss_fetcher - INFO -   dry_run: False
+2026-02-11 16:06:48 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 16:06:48 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 16:06:48 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 16:06:48 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 16:06:48 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 16:06:48 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 16:06:48 - rss_fetcher - INFO - Time range: 2025-02-09 00:00:00+00:00 to 2025-02-11 00:00:00+00:00
+2026-02-11 16:06:48 - rss_fetcher - INFO - Duration: 2 days, 0:00:00
+2026-02-11 16:06:48 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 16:06:48 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 16:06:48 - rss_fetcher - INFO - Time range: 2025-02-09 00:00:00+00:00 to 2025-02-11 00:00:00+00:00
+2026-02-11 16:06:49 - rss_fetcher - INFO - Fetched 0 articles from idiallo.com
+2026-02-11 16:06:51 - rss_fetcher - INFO - Fetched 0 articles from pluralistic.net
+2026-02-11 16:08:07 - rss_fetcher - INFO - API quota loaded: 0/20 requests used today
+2026-02-11 16:08:07 - rss_fetcher - INFO - Gemini API initialized with model: gemini-2.5-flash
+2026-02-11 16:08:07 - rss_fetcher - INFO - Rate limits: 4 RPM, 20 requests/day
+2026-02-11 16:08:07 - rss_fetcher - INFO - Database initialized at /Users/karenou/Desktop/AI/rss_article_fetcher/data/processed_articles.db
+2026-02-11 16:08:07 - rss_fetcher - INFO - Loaded 0 processed articles from database
+2026-02-11 16:08:07 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:08:07 - rss_fetcher - INFO - RSS Article Fetcher Starting
+2026-02-11 16:08:07 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:08:07 - rss_fetcher - INFO - Start Time: 2026-02-11 16:08:07
+2026-02-11 16:08:07 - rss_fetcher - INFO - Debug Mode: False
+2026-02-11 16:08:07 - rss_fetcher - INFO - Log Directory: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 16:08:07 - rss_fetcher - INFO - Configuration:
+2026-02-11 16:08:07 - rss_fetcher - INFO -   rss_file: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 16:08:07 - rss_fetcher - INFO -   data_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/data
+2026-02-11 16:08:07 - rss_fetcher - INFO -   log_dir: /Users/karenou/Desktop/AI/rss_article_fetcher/logs
+2026-02-11 16:08:07 - rss_fetcher - INFO -   gemini_model: gemini-2.5-flash
+2026-02-11 16:08:07 - rss_fetcher - INFO -   batch_size: 10
+2026-02-11 16:08:07 - rss_fetcher - INFO -   force_mode: False
+2026-02-11 16:08:07 - rss_fetcher - INFO -   dry_run: False
+2026-02-11 16:08:07 - rss_fetcher - INFO - ------------------------------------------------------------
+2026-02-11 16:08:07 - rss_fetcher - INFO - Step 1: Loading RSS sources...
+2026-02-11 16:08:07 - rss_fetcher - INFO - Loading RSS sources from: /Users/karenou/Desktop/AI/subscribe_rss.txt
+2026-02-11 16:08:07 - rss_fetcher - INFO - Successfully loaded 6 RSS sources
+2026-02-11 16:08:07 - rss_fetcher - INFO - Validated 6/6 RSS sources
+2026-02-11 16:08:07 - rss_fetcher - INFO - Step 2: Parsing time range...
+2026-02-11 16:08:07 - rss_fetcher - INFO - Time range: 2026-02-09 00:00:00+00:00 to 2026-02-11 00:00:00+00:00
+2026-02-11 16:08:07 - rss_fetcher - INFO - Duration: 2 days, 0:00:00
+2026-02-11 16:08:07 - rss_fetcher - INFO - Step 3: Fetching articles from RSS feeds...
+2026-02-11 16:08:07 - rss_fetcher - INFO - Fetching articles from 6 RSS sources
+2026-02-11 16:08:07 - rss_fetcher - INFO - Time range: 2026-02-09 00:00:00+00:00 to 2026-02-11 00:00:00+00:00
+2026-02-11 16:08:09 - rss_fetcher - INFO - Fetched 1 articles from idiallo.com
+2026-02-11 16:08:40 - rss_fetcher - INFO - Fetched 2 articles from pluralistic.net
+2026-02-11 16:11:08 - rss_fetcher - ERROR - Network error accessing: http://antirez.com/rss
+2026-02-11 16:11:08 - rss_fetcher - ERROR - Error type: ConnectionError
+2026-02-11 16:11:08 - rss_fetcher - ERROR - Error message: HTTPSConnectionPool(host='antirez.com', port=443): Read timed out.
+2026-02-11 16:11:08 - rss_fetcher - INFO - Fetched 0 articles from antirez.com
+2026-02-11 16:11:09 - rss_fetcher - INFO - Fetched 0 articles from dynomight.net
+2026-02-11 16:11:13 - rss_fetcher - INFO - Fetched 0 articles from gilesthomas.com
+2026-02-11 16:11:14 - rss_fetcher - INFO - Fetched 0 articles from terriblesoftware.org
+2026-02-11 16:11:14 - rss_fetcher - INFO - Total articles fetched: 3
+2026-02-11 16:11:14 - rss_fetcher - INFO - Step 4: Filtering processed articles...
+2026-02-11 16:11:14 - rss_fetcher - INFO - Filtered articles: 3 new, 0 already processed
+2026-02-11 16:11:14 - rss_fetcher - INFO - Step 5: Fetching article content...
+2026-02-11 16:11:14 - rss_fetcher - INFO - Fetching content for 3 articles
+2026-02-11 16:11:16 - rss_fetcher - INFO - Article [success]: Microsoft Should Watch The Expanse
+2026-02-11 16:11:16 - rss_fetcher - INFO - Article [success]: Pluralistic: The Nuremberg Caucus (10 Feb 2026)
+2026-02-11 16:11:16 - rss_fetcher - INFO - Article [success]: Pluralistic: The Epstein class and collapse porn (09 Feb 2026)
+2026-02-11 16:11:16 - rss_fetcher - INFO - Successfully fetched content for 3/3 articles
+2026-02-11 16:11:16 - rss_fetcher - INFO - Step 6: Generating English summaries...
+2026-02-11 16:11:16 - rss_fetcher - INFO - Generating summaries for 3 articles (Quota: 20 requests remaining)
+2026-02-11 16:11:39 - rss_fetcher - INFO - Rate limit: waiting 44.8s (RPM: 4/4)
+2026-02-11 16:12:55 - rss_fetcher - INFO - Rate limit: waiting 33.0s (RPM: 4/4)
+2026-02-11 16:13:38 - rss_fetcher - INFO - Successfully generated 3/3 summaries
+2026-02-11 16:13:38 - rss_fetcher - INFO - API usage today: 9/20
+2026-02-11 16:13:38 - rss_fetcher - INFO - Step 7: Saving articles to database...
+2026-02-11 16:13:38 - rss_fetcher - INFO - Saved 3/3 articles to database
+2026-02-11 16:13:38 - rss_fetcher - INFO - Step 8: Pushing to WeChat...
+2026-02-11 16:13:38 - rss_fetcher - INFO - Pushing 3 articles to WeChat
+2026-02-11 16:13:38 - rss_fetcher - INFO - Sending batch 1/1 (3 articles)
+2026-02-11 16:13:38 - rss_fetcher - INFO - Batch 1 sent successfully
+2026-02-11 16:13:38 - rss_fetcher - INFO - Push complete: 3 success, 0 failed
+2026-02-11 16:13:38 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:13:38 - rss_fetcher - INFO - Execution Summary
+2026-02-11 16:13:38 - rss_fetcher - INFO - ============================================================
+2026-02-11 16:13:38 - rss_fetcher - INFO - sources_count: 6
+2026-02-11 16:13:38 - rss_fetcher - INFO - articles_fetched: 3
+2026-02-11 16:13:38 - rss_fetcher - INFO - new_articles: 3
+2026-02-11 16:13:38 - rss_fetcher - INFO - articles_pushed: 3
+2026-02-11 16:13:38 - rss_fetcher - INFO - push_failed: 0
+2026-02-11 16:13:38 - rss_fetcher - INFO - duration: 0:05:31
+2026-02-11 16:13:38 - rss_fetcher - INFO - start_time: 2026-02-09 00:00:00
+2026-02-11 16:13:38 - rss_fetcher - INFO - end_time: 2026-02-11 00:00:00
+2026-02-11 16:13:38 - rss_fetcher - INFO - End Time: 2026-02-11 16:13:38
+2026-02-11 16:13:38 - rss_fetcher - INFO - ============================================================
