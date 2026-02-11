@@ -1,0 +1,43 @@
+# RSS Article Fetcher Configuration File
+# Copy this file to config.yaml and update with your settings
+
+# Enterprise WeChat Settings
+wecom:
+  webhook_url: 'https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=YOUR_KEY_HERE'
+
+# RSS Settings
+rss:
+  file_path: '/rss_article_fetcher/data/subscribe_rss.txt'
+
+# Network Settings
+network:
+  timeout: 30
+  max_retries: 3
+  concurrent_requests: 5
+
+# AI Settings (Google Gemini)
+ai:
+  gemini_api_key: 'YOUR_API_HERE'  # Or set via GEMINI_API_KEY env variable
+  gemini_model: 'gemini-2.5-flash'  # Updated to latest supported model
+  summary_min_length: 100
+  summary_max_length: 300
+  max_rpm: 4  # Maximum requests per minute (keep under 4)
+  max_daily_requests: 20  # Maximum API calls per day
+
+# Scheduler Settings
+scheduler:
+  enabled: false
+  interval_hours: 24
+  cron: ''  # Optional: Use cron expression instead of interval
+
+# Storage Settings
+storage:
+  data_dir: '/rss_article_fetcher/data'
+  log_dir: '/rss_article_fetcher/logs'
+
+# Message Settings
+message:
+  batch_size: 10  # Maximum articles per WeChat message
+
+# Debug Mode
+debug: false
