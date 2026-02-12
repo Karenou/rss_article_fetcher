@@ -227,18 +227,18 @@ class WeComPusher:
         
         # Header
         if total_batches > 1:
-            content_parts.append(f"# 📰 RSS Article Updates (Batch {batch_num}/{total_batches})\n")
+            content_parts.append(f"# 📰 AI博客订阅日报更新 (Batch {batch_num}/{total_batches})\n")
         else:
-            content_parts.append(f"# 📰 RSS Article Updates\n")
+            content_parts.append(f"# 📰 AI博客订阅日报更新\n")
         
-        content_parts.append(f"Found **{len(articles)}** new articles\n")
+        content_parts.append(f"**{len(articles)}**篇文章更新\n")
         content_parts.append("---\n")
         
         # Articles
         for i, article in enumerate(articles, 1):
             content_parts.append(f"\n### {i}. {article.title}\n")
-            content_parts.append(f"**Source:** {article.source}\n")
-            content_parts.append(f"**Link:** [{article.link}]({article.link})\n")
+            content_parts.append(f"**来源:** {article.source}\n")
+            content_parts.append(f"**链接:** [{article.link}]({article.link})\n")
             
             # Prefer Chinese summary, fallback to English summary
             summary_text = getattr(article, 'summary_zh', '') or article.summary
@@ -246,7 +246,7 @@ class WeComPusher:
                 # Truncate summary to keep message within limits
                 if len(summary_text) > self.MAX_SUMMARY_LENGTH:
                     summary_text = summary_text[:self.MAX_SUMMARY_LENGTH] + "..."
-                content_parts.append(f"\n**Summary:**\n{summary_text}\n")
+                content_parts.append(f"\n**内容摘要:**\n{summary_text}\n")
             
             if i < len(articles):
                 content_parts.append("\n---\n")
@@ -284,7 +284,7 @@ class WeComPusher:
         message = {
             "msgtype": "markdown",
             "markdown": {
-                "content": "# 📰 RSS Article Updates\n\nNo new articles found in the specified time range."
+                "content": "# 📰 AI博客订阅日报更新\n\n未在指定时间范围内找到新文章。"
             }
         }
         
