@@ -165,7 +165,7 @@ class Summarizer:
     """Generates English summaries for articles using Google Gemini."""
     
     def __init__(self, api_key: str, model_name: str = "gemini-pro",
-                 min_length: int = 100, max_length: int = 300,
+                 min_length: int = 100, max_length: int = 200,
                  max_retries: int = 3, max_rpm: int = 3, 
                  max_daily_requests: int = 15, data_dir: str = None,
                  logger=None):
@@ -368,7 +368,7 @@ class Summarizer:
         if len(content) > max_chars:
             content = content[:max_chars] + "..."
         
-        prompt = f"""Please read the following article in {source_lang} and provide a concise English summary.
+        prompt = f"""Please read the following article in {source_lang} and provide a concise English summary in less than {self.max_length} words.
 
 Requirements:
 - Summary should be in English
@@ -493,7 +493,7 @@ English Title:
 
 Chinese Translation:"""
             else:
-                prompt = f"""Please translate the following English text to Chinese. Maintain the same tone and style. Only provide the translation, no explanations.
+                prompt = f"""Please translate the following English text to Chinese. Maintain the same tone and style. Only provide the translation, no explanations. Less than {self.max_length} words.
 
 English Text:
 {text}
