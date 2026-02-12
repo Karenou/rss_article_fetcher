@@ -259,6 +259,74 @@ class Storage:
         
         return success_count
     
+    def get_articles_by_time_range(self, start_time: str, end_time: str) -> List:
+        """Query saved articles from database by time range.
+        
+        Args:
+            start_time: Start time string (ISO format, e.g. '2026-02-10 00:00:00').
+            end_time: End time string (ISO format, e.g. '2026-02-11 17:00:00').
+        
+        Returns:
+            List of Article objects.
+        """
+        from src.rss_fetcher import Article
+        from dateutil import parser as date_parser
+        import pytz
+
+        articles = []
+        try:
+            conn = sqlite3.connect(self.db_path)
+            conn.row_factory = sqlite3.Row
+            cursor = conn.cursor()
+
+            cursor.execute('''
+                SELECT title, title_zh, url AS link, source, source_url, 
+                       description, content, summary, summary_zh, published_at
+                FROM articles
+                WHERE published_at >= ? AND published_at <= ?
+                ORDER BY published_at DESC
+            ''', (start_time, end_time))
+
+            rows = cursor.fetchall()
+            conn.close()
+
+            for row in rows:
+                # Parse published_at back to datetime
+                published = None
+                if row['published_at']:
+                    try:
+                        published = date_parser.parse(row['published_at'])
+                        if published.tzinfo is None:
+                            published = pytz.UTC.localize(published)
+                    except Exception:
+                        published = datetime.now(pytz.UTC)
+
+                article = Article(
+                    title=row['title'] or '',
+                    link=row['link'] or '',
+                    published=published or datetime.now(pytz.UTC),
+                    description=row['description'] or '',
+                    source=row['source'] or '',
+                    source_url=row['source_url'] or '',
+                    content=row['content'] or '',
+                    summary=row['summary'] or '',
+                    summary_zh=row['summary_zh'] or '',
+                    title_zh=row['title_zh'] or ''
+                )
+                articles.append(article)
+
+            if self.logger:
+                self.logger.info(
+                    f"Queried {len(articles)} articles from database "
+                    f"(range: {start_time} ~ {end_time})"
+                )
+
+        except Exception as e:
+            if self.logger:
+                self.logger.error(f"Failed to query articles by time range: {e}", exc_info=True)
+
+        return articles
+
     def get_statistics(self) -> dict:
         """Get storage statistics.
         

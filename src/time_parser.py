@@ -284,4 +284,11 @@ Examples:
         default=False
     )
     
+    parser.add_argument(
+        '--push-only',
+        action='store_true',
+        help='Push saved articles from database without re-fetching RSS feeds',
+        default=False
+    )
+    
     return parser

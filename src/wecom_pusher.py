@@ -12,6 +12,13 @@ import time
 class WeComPusher:
     """Pushes article notifications to Enterprise WeChat."""
     
+    # Enterprise WeChat markdown message character limit
+    MAX_CONTENT_LENGTH = 4096
+    # Reserve space for message header
+    HEADER_RESERVE = 150
+    # Maximum summary length per article (reduced from 500 to fit more articles)
+    MAX_SUMMARY_LENGTH = 300
+    
     def __init__(self, webhook_url: str, batch_size: int = 10, 
                  max_retries: int = 3, logger=None):
         """Initialize WeChat pusher.
@@ -85,7 +92,9 @@ class WeComPusher:
         return stats
     
     def _create_batches(self, articles: List) -> List[List]:
-        """Split articles into batches.
+        """Split articles into batches that fit within WeChat message size limit.
+        
+        Each batch's total formatted content must stay under MAX_CONTENT_LENGTH.
         
         Args:
             articles: List of Article objects.
@@ -94,10 +103,58 @@ class WeComPusher:
             List of article batches.
         """
         batches = []
-        for i in range(0, len(articles), self.batch_size):
-            batch = articles[i:i + self.batch_size]
-            batches.append(batch)
+        current_batch = []
+        current_length = self.HEADER_RESERVE
+        
+        for article in articles:
+            article_length = self._estimate_article_length(article)
+            
+            # If adding this article would exceed the limit, start a new batch
+            if current_batch and (current_length + article_length) > self.MAX_CONTENT_LENGTH:
+                batches.append(current_batch)
+                current_batch = []
+                current_length = self.HEADER_RESERVE
+            
+            current_batch.append(article)
+            current_length += article_length
+        
+        # Don't forget the last batch
+        if current_batch:
+            batches.append(current_batch)
+        
+        if self.logger:
+            self.logger.info(
+                f"Split {len(articles)} articles into {len(batches)} batches "
+                f"(max {self.MAX_CONTENT_LENGTH} chars per message)"
+            )
+        
         return batches
+    
+    def _estimate_article_length(self, article) -> int:
+        """Estimate the formatted character length of a single article.
+        
+        Args:
+            article: Article object.
+        
+        Returns:
+            Estimated character count.
+        """
+        length = 0
+        # Title line: "### 1. title\n"
+        length += len(getattr(article, 'title', '')) + 20
+        # Source line: "**Source:** source\n"
+        length += len(getattr(article, 'source', '')) + 20
+        # Link line: "**Link:** [url](url)\n" (URL appears twice)
+        link = getattr(article, 'link', '')
+        length += len(link) * 2 + 20
+        # Summary section
+        summary_text = getattr(article, 'summary_zh', '') or getattr(article, 'summary', '')
+        if summary_text:
+            summary_len = min(len(summary_text), self.MAX_SUMMARY_LENGTH)
+            length += summary_len + 30
+        # Separator "\n---\n"
+        length += 10
+        return length
     
     def _send_batch(self, articles: List, batch_num: int, total_batches: int) -> bool:
         """Send a batch of articles.
@@ -186,15 +243,24 @@ class WeComPusher:
             # Prefer Chinese summary, fallback to English summary
             summary_text = getattr(article, 'summary_zh', '') or article.summary
             if summary_text:
-                # Truncate summary if too long
-                if len(summary_text) > 500:
-                    summary_text = summary_text[:500] + "..."
+                # Truncate summary to keep message within limits
+                if len(summary_text) > self.MAX_SUMMARY_LENGTH:
+                    summary_text = summary_text[:self.MAX_SUMMARY_LENGTH] + "..."
                 content_parts.append(f"\n**Summary:**\n{summary_text}\n")
             
             if i < len(articles):
                 content_parts.append("\n---\n")
         
         content = "".join(content_parts)
+        
+        # Final safety check: truncate if still over limit
+        if len(content) > self.MAX_CONTENT_LENGTH:
+            if self.logger:
+                self.logger.warning(
+                    f"Message content ({len(content)} chars) exceeds limit "
+                    f"({self.MAX_CONTENT_LENGTH}), truncating..."
+                )
+            content = content[:self.MAX_CONTENT_LENGTH - 3] + "..."
         
         # WeChat message format
         message = {

@@ -207,6 +207,67 @@ class RSSArticleFetcher:
             'duration': str(duration).split('.')[0]
         }
     
+    def push_only(self, start_time=None, end_time=None):
+        """Push saved articles from database without re-fetching.
+        
+        Args:
+            start_time: Start time string.
+            end_time: End time string.
+        
+        Returns:
+            Statistics dictionary.
+        """
+        start_dt = datetime.now()
+        
+        self.logger.info("Running in push-only mode (no RSS fetching)")
+        
+        try:
+            # Step 1: Parse time range
+            self.logger.info("Step 1: Parsing time range...")
+            start_time_dt, end_time_dt = self.time_parser.parse_time_range(
+                start_time, end_time, self.config.schedule_interval_hours
+            )
+            
+            # Step 2: Query articles from database
+            self.logger.info("Step 2: Querying articles from database...")
+            start_str = start_time_dt.strftime('%Y-%m-%d %H:%M:%S')
+            end_str = end_time_dt.strftime('%Y-%m-%d %H:%M:%S')
+            articles = self.storage.get_articles_by_time_range(start_str, end_str)
+            
+            if not articles:
+                self.logger.info("No articles found in database for the given time range")
+                self.wecom_pusher.push_articles([])
+                return self._create_stats(start_dt, 0, 0, 0, 0)
+            
+            self.logger.info(f"Found {len(articles)} articles in database")
+            
+            # Step 3: Push to WeChat
+            self.logger.info("Step 3: Pushing to WeChat...")
+            push_stats = self.wecom_pusher.push_articles(articles)
+            
+            # Create statistics
+            end_dt_now = datetime.now()
+            duration = end_dt_now - start_dt
+            
+            stats = {
+                'sources_count': 0,
+                'articles_fetched': len(articles),
+                'new_articles': len(articles),
+                'articles_pushed': push_stats['success'],
+                'push_failed': push_stats['failed'],
+                'duration': str(duration).split('.')[0],
+                'start_time': start_time_dt.strftime('%Y-%m-%d %H:%M:%S'),
+                'end_time': end_time_dt.strftime('%Y-%m-%d %H:%M:%S'),
+                'mode': 'push-only'
+            }
+            
+            self.logger.log_summary(stats)
+            return stats
+            
+        except Exception as e:
+            self.logger.error(f"Fatal error during push-only execution: {e}", exc_info=True)
+            raise
+
     def run_scheduled(self):
         """Run in scheduled mode."""
         self.logger.info("Starting in scheduled mode")
@@ -258,11 +319,17 @@ def main():
         # Create fetcher instance
         fetcher = RSSArticleFetcher(config_path=args.config, debug=args.debug)
         
-        # Check if scheduled mode
-        if fetcher.config.schedule_enabled:
+        # Check run mode
+        if args.push_only:
+            # Push-only mode: read from database, no RSS fetching
+            fetcher.push_only(
+                start_time=args.start,
+                end_time=args.end
+            )
+        elif fetcher.config.schedule_enabled:
             fetcher.run_scheduled()
         else:
-            # Run once
+            # Normal mode: fetch + process + push
             fetcher.run(
                 start_time=args.start,
                 end_time=args.end,
