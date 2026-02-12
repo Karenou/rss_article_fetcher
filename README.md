@@ -62,7 +62,7 @@ rss:
 # AI Settings
 ai:
   gemini_api_key: 'YOUR_API_KEY'
-  gemini_model: 'gemini-pro'
+  gemini_model: 'gemini-2.5-flash'
   summary_min_length: 100
   summary_max_length: 300
 
@@ -128,6 +128,9 @@ python main.py --config /path/to/config.yaml
 
 # Specify time range in hours
 python main.py --hours 48
+
+# only want to push previously processed articles from database without scrapying again
+python main.py --push_only --start "2026-02-08" --end "2026-02-10"
 ```
 
 ### Scheduled Mode
@@ -165,6 +168,8 @@ rss_article_fetcher/
 │   └── config.yaml.example # Configuration template
 ├── logs/                  # Log files
 ├── data/                  # Data storage
+│   ├── rss.txt            # full RSS links file
+│   ├── subscribe_rss.txt  # RSS subscription file
 │   └── processed_articles.db  # SQLite database
 └── src/                   # Source code
     ├── config_manager.py  # Configuration management
